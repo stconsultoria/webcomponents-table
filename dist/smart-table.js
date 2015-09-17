@@ -522,7 +522,13 @@ ng.module('smart-table')
         },
 
         post: function (scope, element, attrs, ctrl) {
-          ctrl.pipe();
+        	
+        	ctrl.pipe();
+	      	
+        	scope.$on('userLoggedIn', function () {
+	    		ctrl.pipe();
+	    	});
+          
         }
       }
     };
