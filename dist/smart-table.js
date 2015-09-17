@@ -36,24 +36,6 @@ ng.module('smart-table')
       delay: 100 //ms
     }
   });
-
-ng.module("smart-table").directive("stResetSearch", function() {
-    return {
-           restrict: 'EA',
-           require: '^stTable',
-           link: function(scope, element, attrs, ctrl) {
-             return element.bind('click', function() {
-               return scope.$apply(function() {
-                 var tableState;
-                 tableState = ctrl.tableState();
-                 tableState.search.predicateObject = {};
-                 tableState.pagination.start = 0;
-                 return ctrl.pipe();
-               });
-             });
-           }
-         };
-})
 ng.module('smart-table')
   .controller('stTableController', ['$scope', '$parse', '$filter', '$attrs', function StTableController ($scope, $parse, $filter, $attrs) {
     var propertyName = $attrs.stTable;
@@ -546,4 +528,21 @@ ng.module('smart-table')
     };
   }]);
 
+ng.module("smart-table").directive("stResetSearch", function() {
+    return {
+           restrict: 'EA',
+           require: '^stTable',
+           link: function(scope, element, attrs, ctrl) {
+             return element.bind('click', function() {
+               return scope.$apply(function() {
+                 var tableState;
+                 tableState = ctrl.tableState();
+                 tableState.search.predicateObject = {};
+                 tableState.pagination.start = 0;
+                 return ctrl.pipe();
+               });
+             });
+           }
+         };
+})
 })(angular);
