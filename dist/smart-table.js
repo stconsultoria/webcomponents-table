@@ -420,11 +420,11 @@ ng.module('smart-table')
         
         function responsiveAware() {
             var pageSize = $window.innerWidth;
-            scope.stDisplayedPages = pageSize > 600 ? 10 : 3;
-            scope.stFirst = pageSize > 600 ? 'Primeiro' : '<<';
-            scope.stLast = pageSize > 600 ? 'Último' : '>>';
-            scope.stPrevious = pageSize > 600 ? 'Anterior' : '<';;
-            scope.stNext = pageSize > 600 ? 'Próximo' : '>';
+            scope.stDisplayedPages = pageSize > 680 ? 10 : 3;
+            scope.stFirst = pageSize > 680 ? 'Primeiro' : '<<';
+            scope.stLast = pageSize > 680 ? 'Último' : '>>';
+            scope.stPrevious = pageSize > 680 ? 'Anterior' : '<';;
+            scope.stNext = pageSize > 680 ? 'Próximo' : '>';
         };
         
         responsiveAware();
